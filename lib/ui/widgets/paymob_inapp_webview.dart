@@ -167,16 +167,16 @@ class _PaymobInAppWebViewState extends State<PaymobInAppWebView> {
                         _paymentCompleted = true;
                       });
 
-                      if (widget.onPayment != null) {
-                        widget.onPayment!(response);
-                      }
-
                       // Auto-pop with response after a short delay to show success
-                      Future.delayed(const Duration(milliseconds: 1500), () {
+                      Future.delayed(const Duration(milliseconds: 500), () {
                         if (mounted) {
                           Navigator.pop(context, response);
                         }
                       });
+                      if (widget.onPayment != null) {
+                        widget.onPayment!(response);
+                      }
+
                     }
                   }
                 },
