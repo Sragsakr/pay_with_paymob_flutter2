@@ -152,7 +152,7 @@ class _PaymobInAppWebViewState extends State<PaymobInAppWebView> {
 
                   if (url != null) {
                     final urlString = url.toString();
-                    if (urlString.contains('txn_response_code') &&
+                    if (
                         urlString.contains('success') &&
                         urlString.contains('id')) {
                       final params = Uri.parse(urlString).queryParameters;
